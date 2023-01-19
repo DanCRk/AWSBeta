@@ -1,1 +1,125 @@
-{}
+{
+  "auth": {
+    "awsbetac02198cd": {
+      "customAuth": false,
+      "dependsOn": [],
+      "providerPlugin": "awscloudformation",
+      "service": "Cognito",
+      "serviceType": "imported"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_auth_awsbetac02198cd_allowUnauthenticatedIdentities": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "awsbetac02198cd"
+        }
+      ]
+    },
+    "AMPLIFY_auth_awsbetac02198cd_authRoleArn": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "awsbetac02198cd"
+        }
+      ]
+    },
+    "AMPLIFY_auth_awsbetac02198cd_authRoleName": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "awsbetac02198cd"
+        }
+      ]
+    },
+    "AMPLIFY_auth_awsbetac02198cd_identityPoolId": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "awsbetac02198cd"
+        }
+      ]
+    },
+    "AMPLIFY_auth_awsbetac02198cd_identityPoolName": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "awsbetac02198cd"
+        }
+      ]
+    },
+    "AMPLIFY_auth_awsbetac02198cd_nativeClientId": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "awsbetac02198cd"
+        }
+      ]
+    },
+    "AMPLIFY_auth_awsbetac02198cd_unauthRoleArn": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "awsbetac02198cd"
+        }
+      ]
+    },
+    "AMPLIFY_auth_awsbetac02198cd_unauthRoleName": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "awsbetac02198cd"
+        }
+      ]
+    },
+    "AMPLIFY_auth_awsbetac02198cd_userPoolId": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "awsbetac02198cd"
+        }
+      ]
+    },
+    "AMPLIFY_auth_awsbetac02198cd_userPoolName": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "awsbetac02198cd"
+        }
+      ]
+    },
+    "AMPLIFY_auth_awsbetac02198cd_webClientId": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "awsbetac02198cd"
+        }
+      ]
+    },
+    "AMPLIFY_storage_awsbeta1a74e3fb_bucketName": {
+      "usedBy": [
+        {
+          "category": "storage",
+          "resourceName": "awsbeta1a74e3fb"
+        }
+      ]
+    },
+    "AMPLIFY_storage_awsbeta1a74e3fb_region": {
+      "usedBy": [
+        {
+          "category": "storage",
+          "resourceName": "awsbeta1a74e3fb"
+        }
+      ]
+    }
+  },
+  "storage": {
+    "awsbeta1a74e3fb": {
+      "dependsOn": [],
+      "providerPlugin": "awscloudformation",
+      "service": "S3",
+      "serviceType": "imported"
+    }
+  }
+}

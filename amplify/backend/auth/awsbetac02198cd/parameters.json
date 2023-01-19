@@ -1,0 +1,16 @@
+{
+  "authSelections": "identityPoolAndUserPool",
+  "resourceName": "awsbetac02198cd",
+  "serviceType": "imported",
+  "region": "us-east-2",
+  "requiredAttributes": [
+    "email"
+  ],
+  "passwordPolicyMinLength": 8,
+  "passwordPolicyCharacters": [],
+  "mfaConfiguration": "OFF",
+  "autoVerifiedAttributes": [
+    "email"
+  ],
+  "mfaTypes": []
+}
