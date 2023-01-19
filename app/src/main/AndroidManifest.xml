@@ -4,6 +4,7 @@
     package="com.dancrk.awsbeta">
 
     <application
+        android:name=".AWSBeta"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
