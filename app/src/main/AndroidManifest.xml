@@ -3,6 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.dancrk.awsbeta">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.SET_WALLPAPER"/>
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
+
+    <uses-permission android:name="com.google.android.gms.permission.AD_ID"/>
+
+
     <application
         android:name=".AWSBeta"
         android:allowBackup="true"
