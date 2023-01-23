@@ -13,25 +13,10 @@
     },
     "categories": {
       "auth": {
-        "awsbetac02198cd": {
-          "userPoolId": "us-east-2_zDVYT95h6",
-          "userPoolName": "myamplifyapp364eb335_userpool_364eb335-dev",
-          "webClientId": "5erqoqim67689b72n21c1dp4pf",
-          "nativeClientId": "7b2qqju1s2g8bh2f7cgc5nhskf",
-          "identityPoolId": "us-east-2:b5795714-717d-413c-a362-a37ba992d4bb",
-          "identityPoolName": "myamplifyapp364eb335_identitypool_364eb335__dev",
-          "allowUnauthenticatedIdentities": true,
-          "authRoleArn": "arn:aws:iam::167849739177:role/amplify-myamplifyapp-dev-201747-authRole",
-          "authRoleName": "amplify-myamplifyapp-dev-201747-authRole",
-          "unauthRoleArn": "arn:aws:iam::167849739177:role/amplify-myamplifyapp-dev-201747-unauthRole",
-          "unauthRoleName": "amplify-myamplifyapp-dev-201747-unauthRole"
-        }
+        "awsbeta185afe71": {}
       },
       "storage": {
-        "awsbeta1a74e3fb": {
-          "bucketName": "android201747-dev",
-          "region": "us-east-2"
-        }
+        "awsbeta": {}
       }
     }
   }

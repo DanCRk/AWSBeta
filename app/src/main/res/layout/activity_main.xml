@@ -4,15 +4,38 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:background="@color/primary"
+    tools:context=".ui.view.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/sliderFotos"
+        android:layout_width="match_parent"
+        android:layout_height="550dp"
+        android:paddingStart="90dp"
+        android:paddingEnd="90dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+    <Button
+        android:id="@+id/subir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SUBIR"
+        android:textColor="@color/primary_dark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/bajar"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/bajar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BAJAR"
+        android:layout_marginBottom="20dp"
+        android:textColor="@color/primary_dark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/subir" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

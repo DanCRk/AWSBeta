@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:context=".ui.view.SelectPhotosDialog">
+
+    <LinearLayout
+        android:id="@+id/llt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="50dp"
+        android:background="@drawable/rounded_bg_dialog"
+        android:elevation="10dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="2dp"
+            android:fontFamily="@font/font_main"
+            android:text="@string/agregar"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+
+        <EditText
+            android:id="@+id/fechaET"
+            android:layout_width="290dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="25dp"
+            android:autofillHints=""
+            android:background="@drawable/custom_et"
+            android:drawablePadding="10dp"
+            android:ems="10"
+            android:hint="@string/fecha"
+            android:inputType="date"
+            android:paddingStart="10dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+            tools:ignore="RtlSymmetry" />
+
+        <EditText
+            android:id="@+id/autobusET"
+            android:layout_width="290dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="25dp"
+            android:autofillHints=""
+            android:background="@drawable/custom_et"
+            android:drawablePadding="10dp"
+            android:ems="10"
+            android:hint="@string/autobus"
+            android:inputType="number"
+            android:paddingStart="10dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+            tools:ignore="RtlSymmetry" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_marginTop="20dp"
+            android:id="@+id/recycler"
+            android:layout_marginStart="25dp"
+            android:layout_marginEnd="25dp"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            tools:text="alo polisia" />
+
+        <Button
+            android:id="@+id/sendButton"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="50dp"
+            android:background="@drawable/bg_button"
+            android:elevation="0dp"
+            android:fontFamily="@font/font_main"
+            android:text="@string/subir"
+            android:textColor="@color/primary"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/addImage"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:background="@drawable/circulo"
+        android:elevation="10dp"
+        android:padding="15dp"
+        android:src="@drawable/ic_add_a_photo"
+        app:layout_constraintBottom_toBottomOf="@+id/llt"
+        app:layout_constraintEnd_toEndOf="@id/llt"
+        app:layout_constraintStart_toStartOf="@id/llt"
+        app:layout_constraintTop_toBottomOf="@+id/llt"
+        app:tint="@color/primary" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

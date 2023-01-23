@@ -6,7 +6,9 @@ import com.amplifyframework.AmplifyException
 import com.amplifyframework.auth.cognito.AWSCognitoAuthPlugin
 import com.amplifyframework.kotlin.core.Amplify
 import com.amplifyframework.storage.s3.AWSS3StoragePlugin
+import dagger.hilt.android.HiltAndroidApp
 
+@HiltAndroidApp
 class AWSBeta : Application() {
 
     override fun onCreate() {

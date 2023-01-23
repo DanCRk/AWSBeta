@@ -1,6 +1,8 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
 }
 
 android {
@@ -20,14 +22,14 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            buildConfigField "String", "USER", "dancrk"
-            buildConfigField "Soolean", "PASS", "cdam2001"
+            buildConfigField 'String', 'USER', '"dancrk"'
+            buildConfigField 'String', 'PASS', '"cdam2001"'
         }
         debug{
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            buildConfigField "String", "USER", "dancrk"
-            buildConfigField "Soolean", "PASS", "cdam2001"
+            buildConfigField 'String', 'USER', '"dancrk"'
+            buildConfigField 'String', 'PASS', '"cdam2001"'
         }
     }
     compileOptions {
@@ -77,4 +79,8 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.4.1"
     //Corrutinas
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0'
+
+    //dagger hilt
+    implementation "com.google.dagger:hilt-android:2.40.5"
+    kapt "com.google.dagger:hilt-android-compiler:2.40.5"
 }
