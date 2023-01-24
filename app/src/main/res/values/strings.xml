@@ -4,4 +4,5 @@
     <string name="agregar">Seleccione las opciones indicadas</string>
     <string name="fecha">Fecha del viaje</string>
     <string name="autobus">Numero de bus</string>
+    <string name="subiendo">Subiendo Imagenes</string>
 </resources>

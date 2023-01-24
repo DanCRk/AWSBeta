@@ -7,14 +7,14 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.dancrk.awsbeta.R
 
-class RecyclerAdapter(val images:List<Uri>, val contexto: Context) : RecyclerView.Adapter<ViewHolder>() {
+class RecyclerAdapter(val images:List<Uri>, val contexto: Context) : RecyclerView.Adapter<ViewHolderRecycler>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolderRecycler {
         val layoutInflater = LayoutInflater.from(parent.context)
-        return ViewHolder(layoutInflater.inflate(R.layout.slider_item_container, parent, false))
+        return ViewHolderRecycler(layoutInflater.inflate(R.layout.recycler_item_container, parent, false))
     }
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolderRecycler, position: Int) {
         holder.bind(images[position],contexto)
     }
 

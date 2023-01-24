@@ -24,15 +24,15 @@ class MainViewModel @Inject constructor(
 ) : ViewModel() {
 
     val listaImagenes = MutableLiveData<List<URL>>()
-    val error = MutableLiveData<Boolean>()
+    val errorUpload = MutableLiveData<Boolean>()
 
     fun uploadImages(imagenes: MutableList<InputStream>, name: String) {
         viewModelScope.launch {
             val response = uploadImagesUseCase(imagenes,name)
             if (response){
-                error.postValue(true)
+                errorUpload.postValue(true)
             }else{
-                error.postValue(false)
+                errorUpload.postValue(false)
             }
         }
     }
@@ -40,7 +40,7 @@ class MainViewModel @Inject constructor(
     fun getImages(nombre: String) {
         viewModelScope.launch {
             val response = downloadImagesUseCase(nombre)
-            if (!response.isNullOrEmpty()) {
+            if (response.isNotEmpty()) {
                 listaImagenes.postValue(response)
             }
         }

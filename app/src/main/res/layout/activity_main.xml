@@ -7,15 +7,61 @@
     android:background="@color/primary"
     tools:context=".ui.view.MainActivity">
 
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/subiendoImagenes"
+        android:visibility="gone"
+        android:clickable="true"
+        android:focusable="true"
+        android:elevation="10dp"
+        android:background="#932626"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/subiendo"
+            android:textColor="#FFFFFF"
+            android:fontFamily="@font/font_main"
+            android:textSize="20sp"/>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:indeterminate="true"
+            android:indeterminateTint="@color/white"
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+    </LinearLayout>
+    <TextView
+        android:visibility="invisible"
+        android:layout_marginTop="20dp"
+        android:id="@+id/textoViajeFecha"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="wrap_content"
+        android:text="20"
+        android:textColor="#FFFFFF"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/font_main"/>
+
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/sliderFotos"
         android:layout_width="match_parent"
         android:layout_height="550dp"
-        android:paddingStart="90dp"
-        android:paddingEnd="90dp"
+        android:paddingTop="30dp"
+        android:paddingBottom="30dp"
+        android:paddingStart="70dp"
+        android:paddingEnd="70dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@id/textoViajeFecha" />
     <Button
         android:id="@+id/subir"
         android:layout_width="wrap_content"
