@@ -26,6 +26,10 @@ class SelectDateAndBusDialog(
 
         binding.recycler.visibility = View.GONE
 
+        binding.addImage.setImageResource(R.drawable.ic_cloud_download)
+
+        binding.sendButton.text = "BAJAR"
+
         binding.sendButton.setOnClickListener {
             val fecha = binding.fechaET.text.toString().replace("/", "-")
             val bus = binding.autobusET.text.toString()

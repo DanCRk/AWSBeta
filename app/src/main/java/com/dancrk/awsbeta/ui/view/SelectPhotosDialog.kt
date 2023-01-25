@@ -18,14 +18,13 @@ import kotlinx.coroutines.launch
 import java.io.InputStream
 
 class SelectPhotosDialog(
-    private val onSubmitClickListener: (MutableList<InputStream>,String) -> Unit
+    private val onSubmitClickListener: (MutableList<Uri>,String) -> Unit
 ) : DialogFragment() {
 
     private var _binding: FragmentDialogSelectPhotosBinding? = null
     private val binding get() = _binding!!
 
     private val sliderItems = mutableListOf<Uri>()
-    private val imagesStreams = mutableListOf<InputStream>()
     private lateinit var adapter: RecyclerAdapter
 
     private val loadImageFromGalleryLauncher =
@@ -33,8 +32,6 @@ class SelectPhotosDialog(
             if (result.resultCode == Activity.RESULT_OK) {
                 val imageUri: Uri = result.data?.data!!
                 sliderItems.add(imageUri)
-                val stream = context!!.contentResolver.openInputStream(imageUri)!!
-                imagesStreams.add(stream)
                 adapter.notifyDataSetChanged()
             }
         }
@@ -60,7 +57,7 @@ class SelectPhotosDialog(
         binding.sendButton.setOnClickListener {
             val fecha = binding.fechaET.text.toString().replace("/","-")
             val bus = binding.autobusET.text.toString()
-            onSubmitClickListener(imagesStreams,"$fecha-$bus")
+            onSubmitClickListener(sliderItems,"$fecha-$bus")
             dismiss()
         }
         return binding.root

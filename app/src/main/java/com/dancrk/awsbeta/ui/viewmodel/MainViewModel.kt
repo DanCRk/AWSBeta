@@ -1,10 +1,11 @@
 package com.dancrk.awsbeta.ui.viewmodel
 
+import android.content.Context
+import android.net.Uri
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import androidx.viewbinding.BuildConfig
 import com.amplifyframework.auth.AuthException
 import com.amplifyframework.auth.AuthUserAttributeKey
 import com.amplifyframework.auth.options.AuthSignUpOptions
@@ -13,7 +14,6 @@ import com.dancrk.awsbeta.domain.DownloadImagesUseCase
 import com.dancrk.awsbeta.domain.UploadImagesUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
-import java.io.InputStream
 import java.net.URL
 import javax.inject.Inject
 
@@ -26,9 +26,9 @@ class MainViewModel @Inject constructor(
     val listaImagenes = MutableLiveData<List<URL>>()
     val errorUpload = MutableLiveData<Boolean>()
 
-    fun uploadImages(imagenes: MutableList<InputStream>, name: String) {
+    fun uploadImages(imagenes: MutableList<Uri>, name: String,context: Context) {
         viewModelScope.launch {
-            val response = uploadImagesUseCase(imagenes,name)
+            val response = uploadImagesUseCase(imagenes,name,context)
             if (response){
                 errorUpload.postValue(true)
             }else{

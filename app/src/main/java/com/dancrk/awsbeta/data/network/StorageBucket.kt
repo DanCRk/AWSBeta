@@ -17,7 +17,7 @@ class StorageBucket @Inject constructor(){
         try {
             Amplify.Storage.list("imagesApp/$nombre").items.forEach {
                 numero++
-                val url = Amplify.Storage.getUrl("imagesApp/$nombre/$numero.png").url
+                val url = Amplify.Storage.getUrl("imagesApp/$nombre/$numero.jpeg").url
                 imagenes.add(url)
                 Log.i("MyAmplifyAppDownload", "Successfully generated: $url")
                 Log.i("MyAmplifyAppDownload", "Item: ${it.key}")
@@ -34,7 +34,7 @@ class StorageBucket @Inject constructor(){
         var numero =0
         for (image in imagenes){
             numero++
-            val upload = Amplify.Storage.uploadInputStream("imagesApp/$nombre/$numero.png", image)
+            val upload = Amplify.Storage.uploadInputStream("imagesApp/$nombre/$numero.jpeg", image)
             try {
                 val result = upload.result()
                 Log.i("MyAmplifyApp", "Successfully uploaded: ${result.key}")

@@ -54,8 +54,8 @@
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/sliderFotos"
         android:layout_width="match_parent"
-        android:layout_height="550dp"
-        android:paddingTop="30dp"
+        android:layout_height="510dp"
+        android:paddingTop="60dp"
         android:paddingBottom="30dp"
         android:paddingStart="70dp"
         android:paddingEnd="70dp"

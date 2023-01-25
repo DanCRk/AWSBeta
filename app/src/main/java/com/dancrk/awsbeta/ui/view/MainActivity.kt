@@ -45,7 +45,7 @@ class MainActivity : AppCompatActivity() {
             binding.textoViajeFecha.visibility = View.INVISIBLE
             SelectPhotosDialog(onSubmitClickListener = { images ,name->
                 binding.subiendoImagenes.visibility = View.VISIBLE
-                viewModel.uploadImages(images,name)
+                viewModel.uploadImages(images,name,this)
             }).show(supportFragmentManager, "addDialogFragment")
         }
         
@@ -77,7 +77,7 @@ class MainActivity : AppCompatActivity() {
         compositePagerTransformer.addTransformer(MarginPageTransformer(30))
         compositePagerTransformer.addTransformer{page, position ->
             val r = 1 - abs(position)
-            page.scaleY = 0.8f + r * 0.25f
+            page.scaleY = 0.85f + r * 0.25f
         }
         binding.sliderFotos.setPageTransformer(compositePagerTransformer)
         adapter.notifyDataSetChanged()
