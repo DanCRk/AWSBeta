@@ -27,6 +27,9 @@ class SelectPhotosDialog(
     private val sliderItems = mutableListOf<Uri>()
     private lateinit var adapter: RecyclerAdapter
 
+    /**
+     * Registra cuando se regresa de la galeria y recoge los datos de la imagen que trajo
+     */
     private val loadImageFromGalleryLauncher =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
             if (result.resultCode == Activity.RESULT_OK) {
@@ -46,6 +49,9 @@ class SelectPhotosDialog(
 
         setUpRecyclerView()
 
+        /**
+         * crea el intent para ir a la galeria y lo lanza
+         */
         binding.addImage.setOnClickListener {
             val intent = Intent(
                 Intent.ACTION_PICK
@@ -54,6 +60,9 @@ class SelectPhotosDialog(
             loadImageFromGalleryLauncher.launch(intent)
         }
 
+        /**
+         * cierra el dialogo y envia las imagenes y los datos introducidos
+         */
         binding.sendButton.setOnClickListener {
             val fecha = binding.fechaET.text.toString().replace("/","-")
             val bus = binding.autobusET.text.toString()
@@ -63,6 +72,9 @@ class SelectPhotosDialog(
         return binding.root
     }
 
+    /**
+     * Inicializa el recyclerview pasandole los parametros requeridos
+     */
     private fun setUpRecyclerView() {
         adapter = RecyclerAdapter(sliderItems, requireContext())
         binding.recycler.layoutManager =

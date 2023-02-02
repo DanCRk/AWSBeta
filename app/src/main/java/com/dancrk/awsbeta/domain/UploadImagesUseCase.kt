@@ -12,6 +12,15 @@ import javax.inject.Inject
 
 class UploadImagesUseCase @Inject constructor(private val repository: Repository) {
 
+    /**
+     * Convierte los Uri de las imagenes a inputStream comprimidos a un 65% de calidad y las manda al repositorio
+     *
+     * @param imagenes lista con los Uri de las imagenes a subir
+     * @param name nombre del archivo a subir
+     * @param context contexto de la actividad o del que viene
+     *
+     * @return true si se subieron bien las imagenes, false si hubo un error
+     */
     suspend operator fun invoke(imagenes: MutableList<Uri>, nombre: String,context: Context): Boolean {
         val inputStreamImages:MutableList<InputStream> = mutableListOf()
         for (image in imagenes){
@@ -20,7 +29,6 @@ class UploadImagesUseCase @Inject constructor(private val repository: Repository
             val baos = ByteArrayOutputStream()
             bitmap.compress(Bitmap.CompressFormat.JPEG,65,baos)
             val imageCompress = ByteArrayInputStream(baos.toByteArray())
-//            val imageCompress = context.contentResolver.openInputStream(image)!!
             inputStreamImages.add(imageCompress)
         }
         return repository.uploadImagesToAWS(inputStreamImages, nombre)

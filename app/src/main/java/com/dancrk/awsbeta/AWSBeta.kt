@@ -11,6 +11,9 @@ import dagger.hilt.android.HiltAndroidApp
 @HiltAndroidApp
 class AWSBeta : Application() {
 
+    /**
+     * Configura el Amplify con los pluguins a utilizar y lo inicializa al lanzar la app
+     */
     override fun onCreate() {
         super.onCreate()
         try {

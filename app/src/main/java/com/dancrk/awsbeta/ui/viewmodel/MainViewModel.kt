@@ -26,6 +26,14 @@ class MainViewModel @Inject constructor(
     val listaImagenes = MutableLiveData<List<URL>>()
     val errorUpload = MutableLiveData<Boolean>()
 
+    /**
+     * Manda las Uris a la capa de datos y realiza la logica por si hubo un error al subir las imagenes
+     * y postea el valor a la variable errorUpload
+     *
+     * @param imagenes lista con los Uri de las imagenes a subir
+     * @param name nombre del archivo a subir
+     * @param context contexto de la actividad o del que viene
+     */
     fun uploadImages(imagenes: MutableList<Uri>, name: String,context: Context) {
         viewModelScope.launch {
             val response = uploadImagesUseCase(imagenes,name,context)
@@ -37,6 +45,11 @@ class MainViewModel @Inject constructor(
         }
     }
 
+    /**
+     * Recoge las URL de la capa de datos y realiza la logica por si hubo un error al descargar las URL
+     *
+     * @param nombre nombre de los archivos a consultar
+     */
     fun getImages(nombre: String) {
         viewModelScope.launch {
             val response = downloadImagesUseCase(nombre)
@@ -46,6 +59,9 @@ class MainViewModel @Inject constructor(
         }
     }
 
+    /**
+     * Crea un usuario en la pool de usuarios de cognito, se requiere correo, usuario y contraseña
+     */
     fun singUp(){
         viewModelScope.launch {
             val options = AuthSignUpOptions.builder()
@@ -61,6 +77,9 @@ class MainViewModel @Inject constructor(
         }
     }
 
+    /**
+     * Envia el codigo de verificacion que llega al correo, se requiere el usuario y el codigo
+     */
     fun code(){
         viewModelScope.launch {
             try {
@@ -78,6 +97,9 @@ class MainViewModel @Inject constructor(
         }
     }
 
+    /**
+     * Inicia sesion a la cuenta creada de cognito, requiere usuario y contraseña
+     */
     fun singIn() {
         viewModelScope.launch {
             try {

@@ -32,6 +32,9 @@ class MainActivity : AppCompatActivity() {
 
         viewModel.singIn()
 
+        /**
+         * abre el dialogo para seleccionar la fecha y numero de bus, una vez regresados los datos los manda al viewmodel
+         */
         binding.bajar.setOnClickListener {
             SelectDateAndBusDialog(onSubmitClickListener = { name ->
                 viewModel.getImages(name)
@@ -41,6 +44,9 @@ class MainActivity : AppCompatActivity() {
             }).show(supportFragmentManager, "uploadDialogFragment")
         }
 
+        /**
+         * abre el dialogo para seleccionar la fecha y numero de bus e imagenes a subir, una vez regresados los datos los manda al viewmodel
+         */
         binding.subir.setOnClickListener {
             binding.textoViajeFecha.visibility = View.INVISIBLE
             SelectPhotosDialog(onSubmitClickListener = { images ,name->
@@ -48,7 +54,10 @@ class MainActivity : AppCompatActivity() {
                 viewModel.uploadImages(images,name,this)
             }).show(supportFragmentManager, "addDialogFragment")
         }
-        
+
+        /**
+         * muestra un toast con un error si las imagenes no se cargaron adecuadamente
+         */
         viewModel.errorUpload.observe(this){ error ->
             binding.subiendoImagenes.visibility = View.GONE
             if (error){
@@ -59,11 +68,19 @@ class MainActivity : AppCompatActivity() {
 
         }
 
+        /**
+         * Pasa la lista de imagenes del viemodel y se las pasa al viewpager
+         */
         viewModel.listaImagenes.observe(this){ imagenes ->
             setUpViewPager(imagenes as MutableList<URL>)
         }
     }
 
+    /**
+     * Inicializa el viewpager con su adaptador
+     *
+     * @param imagenes lista de URL de las imagenes
+     */
     private fun setUpViewPager(imagenes:MutableList<URL>) {
         adapter = SliderAdapter(imagenes,this)
         binding.sliderFotos.adapter = adapter

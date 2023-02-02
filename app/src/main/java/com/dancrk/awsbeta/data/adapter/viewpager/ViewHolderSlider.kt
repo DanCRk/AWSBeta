@@ -15,6 +15,9 @@ class ViewHolderSlider(val view: View) : RecyclerView.ViewHolder(view) {
 
     private val binding = SliderItemContainerBinding.bind(view)
 
+    /**
+     * Carga la imagen en el image view utilizando glide
+     */
     @SuppressLint("SetTextI18n")
     fun bind(image: URL, context: Context) {
         Glide.with(context)

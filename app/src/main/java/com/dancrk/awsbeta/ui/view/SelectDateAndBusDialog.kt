@@ -30,6 +30,9 @@ class SelectDateAndBusDialog(
 
         binding.sendButton.text = "BAJAR"
 
+        /**
+         * cierra el dialogo y envia las imagenes y los datos introducidos
+         */
         binding.sendButton.setOnClickListener {
             val fecha = binding.fechaET.text.toString().replace("/", "-")
             val bus = binding.autobusET.text.toString()
